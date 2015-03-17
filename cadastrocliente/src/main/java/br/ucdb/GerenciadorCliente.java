@@ -9,6 +9,10 @@ public class GerenciadorCliente {
 		clientes.add(cliente);
 	}
 	
+	public void excluir (int posicao){
+		clientes.remove(posicao);
+	}
+	
 	public List<Cliente> getClientes() {
 		return clientes;
 	}
