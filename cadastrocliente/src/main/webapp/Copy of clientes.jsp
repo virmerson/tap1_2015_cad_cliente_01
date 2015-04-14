@@ -7,15 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Clientes</title>
-<script type="text/javascript">
 
-function confirmaExclusao(pos){
-	confirmou = window.confirm("Tem Certeza que deseja Excluir?")
-	if(confirmou==true){
-		location.href="ClienteController?acao=exc&pos="+pos;
-	}
-}
-</script>
 </head>
 <body>
 
@@ -30,7 +22,7 @@ function confirmaExclusao(pos){
 	%>
 
 	<%=c.getNome()%>
-	  <a href='javascript:confirmaExclusao(<%=i%>)'> excluir </a> 
+	  <a href='ClienteController?acao=exc&pos=<%=i%>'> excluir </a> 
 
 	<%
 		}
