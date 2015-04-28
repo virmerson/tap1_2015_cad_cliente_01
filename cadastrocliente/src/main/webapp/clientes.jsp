@@ -9,10 +9,10 @@
 <title>Clientes</title>
 <script type="text/javascript">
 
-function confirmaExclusao(pos){
+function confirmaExclusao(id){
 	confirmou = window.confirm("Tem Certeza que deseja Excluir?")
 	if(confirmou==true){
-		location.href="ClienteController?acao=exc&pos="+pos;
+		location.href="ClienteController?acao=exc&id="+id;
 	}
 }
 </script>
@@ -29,8 +29,12 @@ function confirmaExclusao(pos){
 			Cliente c = clientes.get(i);
 	%>
 
-	<%=c.getNome()%>
-	  <a href='javascript:confirmaExclusao(<%=i%>)'> excluir </a> 
+	<%=c.getId()%> | <%=c.getNome()%>
+	  <a href='javascript:confirmaExclusao(<%=c.getId()%>)'> excluir </a> | 
+	  
+	  <a href='ClienteController?acao=edit&id=<%=c.getId()%>'> editar </a>
+	  
+	   <br/>
 
 	<%
 		}
