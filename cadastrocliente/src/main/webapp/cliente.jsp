@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<%@page import="br.ucdb.Cliente"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Cliente cliente = (Cliente)request.getAttribute("cli");
-%>
+
 <form action="ClienteController" method="POST">
 		
-		
-		<input type="hidden" name="id" value="<%=cliente.getId()%>">
+		<h1> Cadastro de Cliente com JSTL</h1>
+		<input type="hidden" name="id" value="${requestScope.cli.id}">
 		
 		
 		<label>
 		Nome:
 		</label>
-		<input type="text" name="nome" value="<%=cliente.getNome()%>">
+		<input type="text" name="nome" value="${requestScope.cli.nome}">
 		
 		<label>
 		Fone:
 		</label>
-		<input type="text" name="fone" value="<%=cliente.getFone()%>">
+		<input type="text" name="fone" value="${requestScope.cli.fone}">
 		
 		<input type="submit" value="Salvar">
 </form>
